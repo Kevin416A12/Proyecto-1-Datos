@@ -18,8 +18,9 @@ public class QueueList
     {
         Queue current = head;
 
-        if (current != null)
+        if (current == null) 
         {
+            Console.WriteLine("DA NULL");
             return false;
         }
 
@@ -27,6 +28,7 @@ public class QueueList
         {
             if (current.topic == topic && current.user == user)
             {
+                Console.WriteLine(current.topic + " : " + current.user);
                 return true;
             }
 
@@ -37,11 +39,7 @@ public class QueueList
 
     public string Subscribe(string topic, string user)
     {
-        if (ChecIfSubs(topic, user))
-        {
-            return "El usuario ya estaba subscrito a este tema";
-        }
-        else
+        if (ChecIfSubs(topic, user) == false)
         {
             Queue newQueue = new Queue(topic, user);
             
@@ -62,6 +60,11 @@ public class QueueList
             }
             size++;
             return "El usuario se ha subscrito al tema";
+        }
+        
+        else 
+        {
+            return "El usuario ya estaba subscrito a este tema";
         }
         
     }

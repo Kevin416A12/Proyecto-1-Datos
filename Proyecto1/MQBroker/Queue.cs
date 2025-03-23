@@ -6,6 +6,7 @@ class Node
 {
     public string Value { get; set; }
     public Node Next { get; set; }
+    
 
     public Node(string value)
     {
@@ -53,14 +54,31 @@ class Queue
             return null;
         }
 
-        string value = first.Value;
-        first = first.Next;
+        string value = last.Value;
 
-        if (first == null) // Si la cola queda vacía, actualizamos last
+        // Si solo hay un elemento
+        if (first == last)
+        {
+            first = null;
             last = null;
+        }
+        else
+        {
+            // Recorremos hasta llegar al nodo anterior al 'last'
+            Node actual = first;
+            while (actual.Next != last)
+            {
+                actual = actual.Next;
+            }
+
+            // Actualizamos 'last' al nodo anterior
+            last = actual;
+            last.Next = null;
+        }
 
         return value;
     }
+
 
 
     public void PrintQueue()

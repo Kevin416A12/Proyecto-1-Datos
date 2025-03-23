@@ -1,22 +1,7 @@
 ﻿using System;
 
-namespace MQBroker
-{
-    class Program
-    {
-        static void Main()
-        {
-            Queue queue = new Queue("Ejemplo","Juanito");
-            queue.Enqueue("1");
-            queue.Enqueue("2");
-            queue.Enqueue("3");
-            Console.WriteLine(queue.Dequeue());
-            queue.PrintQueue();
+namespace MQBroker;
 
-
-        }
-    }
-}
 class Node
 {
     public string Value { get; set; }

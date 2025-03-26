@@ -2,6 +2,63 @@
 using System.Net;
 using System.Net.Sockets;
 
+public class Topic
+{
+    private string _topicName;
+
+    public Topic(string topicName)
+    {
+        // No puede ser nulo ni vacío
+        if (string.IsNullOrWhiteSpace(topicName))
+        {
+            throw new ArgumentException("El nombre del topic no puede ser nulo o vacío");
+        }
+
+        _topicName = topicName;
+    }
+
+    public string TopicName
+    {
+        get { return _topicName; }
+    }
+
+    public override string ToString()
+    {
+        return _topicName;
+    }
+}
+
+public class Message
+{
+    private string _content;
+
+    public Message(string content)
+    {
+        if (string.IsNullOrWhiteSpace(content))
+        {
+            throw new ArgumentException("El contenido del mensaje no puede ser nulo o estar en blanco.");
+        }
+        if (content.Contains(";"))
+        {
+            throw new ArgumentException("El contenido del mensaje no puede contener el carácter ';'.");
+        }
+        
+        _content = content;
+        
+    }
+
+    public string Content
+    {
+        get { return _content; }
+    }
+
+    public override string ToString()
+    {
+        return _content;
+    }
+}
+
+
 
 class MQClient
 {   
@@ -17,13 +74,19 @@ class MQClient
         this.AppID = AppID;
     }
 
-    public bool Subscribe(string topic)
-    {
+    public bool Subscribe(Topic topic)
+    {   
+        if (topic == null)
+        {
+            throw new ArgumentNullException(nameof(topic), "El topic no puede ser null");
+        }
+
+        string topicName = topic.TopicName;
         // Crear socket
         Socket mqClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         IPEndPoint endPoint = new IPEndPoint(ipAddress, port);
         mqClient.Connect(endPoint);
-        string mensaje = "Subscribe;" + AppID + ";" + topic;
+        string mensaje = "Subscribe;" + AppID + ";" + topicName;
         mqClient.Send(System.Text.Encoding.UTF8.GetBytes(mensaje));
         
         byte[] buffer = new byte[1024];
@@ -34,13 +97,20 @@ class MQClient
         return true;
     }
     
-    public bool Unsubscribe(string topic)
+    public bool Unsubscribe(Topic topic)
     {
+        if (topic == null)
+        {
+            throw new ArgumentNullException(nameof(topic), "El topic no puede ser null");
+        }
+
+        string topicName = topic.TopicName;
+        
         // Crear socket
         Socket mqClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         IPEndPoint endPoint = new IPEndPoint(ipAddress, port);
         mqClient.Connect(endPoint);
-        string mensaje = "Unsubscribe;" + AppID + ";" + topic;
+        string mensaje = "Unsubscribe;" + AppID + ";" + topicName;
         mqClient.Send(System.Text.Encoding.UTF8.GetBytes(mensaje));
         
         byte[] buffer = new byte[1024];
@@ -50,13 +120,26 @@ class MQClient
         Console.WriteLine(respuesta);
         return true;
     }
-    public bool publish(string topic, string message)
-    {
+    public bool publish(Topic topic, Message message)
+    {   
+        if (topic == null)
+        {
+            throw new ArgumentNullException(nameof(topic), "El topic no puede ser null");
+        }
+
+        string topicName = topic.TopicName;
+        
+        if (message == null)
+        {
+            throw new ArgumentNullException(nameof(message), "El mensaje no puede ser null");
+        }
+        string messageToSend = message.Content;
+        
         // Crear socket
         Socket mqClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         IPEndPoint endPoint = new IPEndPoint(ipAddress, port);
         mqClient.Connect(endPoint);
-        string mensaje = "Publish;" + message + ";" + topic;
+        string mensaje = "Publish;" + messageToSend + ";" + topicName;
         mqClient.Send(System.Text.Encoding.UTF8.GetBytes(mensaje));
         
         byte[] buffer = new byte[1024];
@@ -66,7 +149,7 @@ class MQClient
         Console.WriteLine(respuesta);
         return true;
     }
-    public bool receive(string topic)
+    public Message receive(Topic topic)
     {
         // Crear socket
         Socket mqClient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -80,7 +163,8 @@ class MQClient
         string respuesta = System.Text.Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
         mqClient.Close();
         Console.WriteLine(respuesta);
-        return true;
+        Message message = new Message(respuesta);
+        return message;
     }
 }
 
@@ -90,14 +174,19 @@ class program
     {   
         
         MQClient client = new MQClient("192.168.1.163",1234, 416);
-        client.Subscribe("Comida");
-        MQClient client1 = new MQClient("192.168.1.163",1234, 123);
-        client1.Subscribe("Comida");
-        client.publish("Comida", "Salsa");
-        client.publish("Comida", "Picante");
-        client.receive("Comida");
-        client1.receive("Comida");
-        client.receive("Comida");
-        client1.receive("Comida");
+        Topic topic = new Topic("Comida");
+        Message menssage = new Message("Hola, mundo");
+        
+        
+        client.Subscribe(topic);
+        client.Subscribe(topic);
+        client.publish(topic, menssage);
+        client.Unsubscribe(topic);
+        client.receive(topic);
+        
+        
+        
     }
+
+   
 }

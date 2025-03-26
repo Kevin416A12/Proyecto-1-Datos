@@ -19,7 +19,8 @@ class Program
         // Crear socket
         Socket mqBroker = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         // Crear punto de conexión
-        IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, 1234);
+        IPAddress serverIp = IPAddress.Parse("192.168.1.163");
+        IPEndPoint endPoint = new IPEndPoint(serverIp, 1234);
         mqBroker.Bind(endPoint);
         mqBroker.Listen(5);
 
@@ -45,7 +46,7 @@ class Program
             byte[] buffer = new byte[1024];
             int bytesRecibidos = cliente.Receive(buffer);
             string mensaje = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
-            string[] Data = mensaje.Split(',');
+            string[] Data = mensaje.Split(';');
             string Petition = Data[0];
             string appid = Data[1];
             string topic = Data[2];
@@ -55,37 +56,34 @@ class Program
             if (Petition == "Subscribe")
             {
                 string Result = queueList.Subscribe(topic, appid);
-                string respuesta = "Servidor recibió: " + Result; ;
+                string respuesta = "Servidor envía: " + Result; ;
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else if (Petition == "Unsubscribe")
             {
                 queueList.Unsubscribe(topic, appid);
                 string Result = queueList.Unsubscribe(topic, appid);
-                string respuesta = "Servidor recibió: " + Result;
+                string respuesta = "Servidor envía: " + Result;
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else if (Petition == "Publish")
             {
                 queueList.Publish(topic, appid);
-                string Result = "Published";
-                string respuesta = "Servidor recibió: " + Result;
+                string Result = "Published in " + topic;
+                string respuesta = "Servidor envía: " + Result;
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else if (Petition == "Receive")
             {
-                string Result =queueList.Receive(topic, appid);
-                string respuesta = "Servidor recibió: " + Result;
+                string Result = queueList.Receive(topic, appid);
+                string respuesta = "Servidor envía: " + Result;
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else
             {
+                
                 Console.WriteLine("Petition not recognized");
             }
-            
-            
-            
-            
             
         }
         catch (Exception ex)

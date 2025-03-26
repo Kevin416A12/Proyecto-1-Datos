@@ -73,7 +73,7 @@ public class QueueList
     {
         if (head == null)
         {
-            return "EL usuario no est´subscrito a ningún tema";
+            return "El usuario no está subscrito a ningún tema";
         }
 
         if (head.topic == topic && head.user == user)

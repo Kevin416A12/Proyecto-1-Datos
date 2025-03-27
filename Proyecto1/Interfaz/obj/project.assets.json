@@ -8,24 +8,31 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\anoni\\.nuget\\packages\\": {}
+    "C:\\Users\\cotym\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\Interfaz.csproj",
+      "projectUniqueName": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\Interfaz.csproj",
       "projectName": "Interfaz",
-      "projectPath": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\Interfaz.csproj",
-      "packagesPath": "C:\\Users\\anoni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\obj\\",
+      "projectPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\Interfaz.csproj",
+      "packagesPath": "C:\\Users\\cotym\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\Interfaz\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\anoni\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cotym\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -64,7 +71,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\anoni\\.dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

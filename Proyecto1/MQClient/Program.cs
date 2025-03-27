@@ -1,4 +1,4 @@
-﻿namespace MQClient;
+﻿namespace MQClientNS;
 using System.Net;
 using System.Net.Sockets;
 
@@ -60,7 +60,7 @@ public class Message
 
 
 
-class MQClient
+public class MQClient
 {   
     IPAddress ipAddress;
     private int port;

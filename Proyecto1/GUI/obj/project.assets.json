@@ -27,32 +27,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anoni\\.nuget\\packages\\": {}
+    "C:\\Users\\cotym\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
+      "projectUniqueName": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\anoni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\GUI\\obj\\",
+      "projectPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\cotym\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\anoni\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\cotym\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\MQClient\\MQClient.csproj": {
-              "projectPath": "C:\\Users\\anoni\\Documents\\GitHub\\Proyecto-1-Datos\\Proyecto1\\MQClient\\MQClient.csproj"
+            "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\MQClient.csproj": {
+              "projectPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\MQClient.csproj"
             }
           }
         }
@@ -90,7 +97,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\anoni\\.dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

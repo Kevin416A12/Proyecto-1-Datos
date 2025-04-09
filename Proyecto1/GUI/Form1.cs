@@ -18,6 +18,30 @@ namespace GUI
             MQClientNS.MQClient cliente = new MQClientNS.MQClient(ip, port, user);
         }
 
+        public bool validacionIP(string IP)
+        {
+            string[] partesIP = IP.Split(".");
+
+            if (partesIP.Length != 4) {
+                return false;
+            }
+
+            int contador = 0;
+
+            while (contador < 4)
+            {
+                if (!int.TryParse(partesIP[contador], out int numero))
+                    return false;
+
+                if (numero < 0 || numero > 255)
+                    return false;
+
+                contador++;
+            }
+
+            return true;
+        }
+
         public bool recepcionDatosCliente()
         {
 
@@ -25,12 +49,11 @@ namespace GUI
             string port_entrada = portBox.Text;
             string AppID_entrada = AppIDBox.Text;
 
-            int numeroIP = -1;
             int numeroPort = -1;
             int numeroID = -1;
 
 
-            if (int.TryParse(ip_entrada, out numeroIP)) {
+            if (validacionIP(ip_entrada)) {
                 Advertencia_IP.Hide();
             } else {
                 Advertencia_IP.Show();
@@ -49,11 +72,11 @@ namespace GUI
                 Advertencia_ID.Show();
             }
 
-            if (numeroPort != -1 && numeroIP != -1 && numeroID != -1) {
+            if (numeroPort != -1 && validacionIP(ip_entrada) && numeroID != -1) {
                 inicializacion_cliente(ip_entrada, numeroPort, numeroID);
 
                 IP_Label.Show();
-                IP_Label.Text = "IP: " + numeroIP.ToString();
+                IP_Label.Text = "IP: " + ip_entrada;
 
                 Port_Label.Show();
                 Port_Label.Text = "Port: " + numeroPort.ToString();
@@ -74,15 +97,23 @@ namespace GUI
 
             string topic_entrada = topicBox.Text;
 
-            if (topic_entrada == null || topic_entrada == "") {
-                Advertencia_Tema.Show();
+            if (cliente != null)
+            {
 
-            } else {
-                if (validacion_datos_cliente) {
-                    MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
-                    cliente.Subscribe(topic);
+                if (topic_entrada == null || topic_entrada == "")
+                {
+                    Advertencia_Tema.Show();
+
                 }
-                Advertencia_Tema.Hide();
+                else
+                {
+                    if (validacion_datos_cliente)
+                    {
+                        MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
+                        cliente.Subscribe(topic);
+                    }
+                    Advertencia_Tema.Hide();
+                }
             }
 
         }
@@ -93,15 +124,23 @@ namespace GUI
 
             string topic_entrada = topicBox.Text;
 
-            if (topic_entrada == null || topic_entrada == ""){
-                Advertencia_Tema.Show();
+            if (cliente != null)
+            {
 
-            } else {
-                if (validacion_datos_cliente) {
-                    MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
-                    cliente.Unsubscribe(topic);
+                if (topic_entrada == null || topic_entrada == "")
+                {
+                    Advertencia_Tema.Show();
+
                 }
-                Advertencia_Tema.Hide();
+                else
+                {
+                    if (validacion_datos_cliente)
+                    {
+                        MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
+                        cliente.Unsubscribe(topic);
+                    }
+                    Advertencia_Tema.Hide();
+                }
             }
 
         }
@@ -112,29 +151,36 @@ namespace GUI
             string mensaje_entrada = publishText.Text;
             string topic_entrada = topicBox.Text;
 
-
-            if (topic_entrada == null || topic_entrada == "") {
-                Advertencia_Tema.Show();
-            }
-            else {
-                Advertencia_Tema.Hide();
-            }
-
-            if (mensaje_entrada == null || mensaje_entrada == "")
+            if (cliente != null)
             {
 
-                publishText.Text = "Debe de ingresar una entrada válida";
-            }
-
-
-            if (mensaje_entrada != null && mensaje_entrada != "" && topic_entrada != null && topic_entrada != "") {
-
-                if (validacion_datos_cliente) {
-                    MQClientNS.Message mensaje = new MQClientNS.Message(mensaje_entrada);
-                    MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
-                    cliente.publish(topic, mensaje);
+                if (topic_entrada == null || topic_entrada == "")
+                {
+                    Advertencia_Tema.Show();
                 }
-            
+                else
+                {
+                    Advertencia_Tema.Hide();
+                }
+
+                if (mensaje_entrada == null || mensaje_entrada == "")
+                {
+
+                    publishText.Text = "Debe de ingresar una entrada válida";
+                }
+
+
+                if (mensaje_entrada != null && mensaje_entrada != "" && topic_entrada != null && topic_entrada != "")
+                {
+
+                    if (validacion_datos_cliente)
+                    {
+                        MQClientNS.Message mensaje = new MQClientNS.Message(mensaje_entrada);
+                        MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
+                        cliente.publish(topic, mensaje);
+                    }
+
+                }
             }
         }
 
@@ -143,36 +189,39 @@ namespace GUI
             bool validacion_datos_cliente = recepcionDatosCliente();
             string topic_entrada = topicBox.Text;
 
-
-            if (topic_entrada == null || topic_entrada == "")
-            {
-                Advertencia_Tema.Show();
-            }
-            else
-            {
-                Advertencia_Tema.Hide();
-            }
-
-            if (topic_entrada != null && topic_entrada != "")
+            if (cliente != null)
             {
 
-                if (validacion_datos_cliente)
+                if (topic_entrada == null || topic_entrada == "")
                 {
-                    MQClientNS.Topic topic = new Topic(topic_entrada);
-                    MQClientNS.Message message = cliente.receive(topic);
-
-                    string display_message = "";
-
-                    display_message = message.ToString();
-
-                    receiveText.Text = display_message;
-                    receiveTopicBox.Text = topic_entrada;
+                    Advertencia_Tema.Show();
+                }
+                else
+                {
+                    Advertencia_Tema.Hide();
                 }
 
+                if (topic_entrada != null && topic_entrada != "")
+                {
+
+                    if (validacion_datos_cliente)
+                    {
+                        MQClientNS.Topic topic = new Topic(topic_entrada);
+                        MQClientNS.Message message = cliente.receive(topic);
+
+                        string display_message = "";
+
+                        display_message = message.ToString();
+
+                        receiveText.Text = display_message;
+                        receiveTopicBox.Text = topic_entrada;
+                    }  
+
+                }
+
+
+
             }
-
-
-
         }
     }
 }

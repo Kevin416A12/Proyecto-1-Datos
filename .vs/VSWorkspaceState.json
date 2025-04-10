@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Proyecto1"
+    "\\Proyecto1",
+    "\\Proyecto1\\GUI",
+    "\\Proyecto1\\MQBroker",
+    "\\Proyecto1\\MQClient"
   ],
-  "SelectedNode": "\\Proyecto1\\Proyecto1.sln",
+  "SelectedNode": "\\Proyecto1\\GUI\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

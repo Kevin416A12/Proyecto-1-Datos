@@ -4,8 +4,9 @@ using System.Windows.Forms.VisualStyles;
 
 namespace GUI
 {
-    public partial class Form1 : Form
-    {
+    public partial class Form1 : Form {
+
+
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +16,7 @@ namespace GUI
 
         public void inicializacion_cliente(string ip, int port, int user)
         {
-            MQClientNS.MQClient cliente = new MQClientNS.MQClient(ip, port, user);
+            cliente = new MQClientNS.MQClient(ip, port, user);
         }
 
         public bool validacionIP(string IP)
@@ -72,7 +73,7 @@ namespace GUI
                 Advertencia_ID.Show();
             }
 
-            if (numeroPort != -1 && validacionIP(ip_entrada) && numeroID != -1) {
+            if (numeroPort != -1 && validacionIP(ip_entrada) == true && numeroID != -1) {
                 inicializacion_cliente(ip_entrada, numeroPort, numeroID);
 
                 IP_Label.Show();
@@ -82,7 +83,7 @@ namespace GUI
                 Port_Label.Text = "Port: " + numeroPort.ToString();
 
                 Advertencia_conexion.Hide();
-
+                Advertencia_Tema.Show();
                 return true;
             } else {
                 Advertencia_conexion.Show();
@@ -94,6 +95,7 @@ namespace GUI
         private void botonSubs_Click(object sender, EventArgs e)
         {
             bool validacion_datos_cliente = recepcionDatosCliente();
+            Console.WriteLine(validacion_datos_cliente);
 
             string topic_entrada = topicBox.Text;
 
@@ -107,9 +109,10 @@ namespace GUI
                 }
                 else
                 {
-                    if (validacion_datos_cliente)
+                    if (validacion_datos_cliente == true)
                     {
                         MQClientNS.Topic topic = new MQClientNS.Topic(topic_entrada);
+                        Console.WriteLine("1212");
                         cliente.Subscribe(topic);
                     }
                     Advertencia_Tema.Hide();

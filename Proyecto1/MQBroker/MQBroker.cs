@@ -19,7 +19,7 @@ class Program
         // Crear socket
         Socket mqBroker = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         // Crear punto de conexión
-        IPAddress serverIp = IPAddress.Parse("192.168.1.163");
+        IPAddress serverIp = IPAddress.Parse("192.168.5.66");
         IPEndPoint endPoint = new IPEndPoint(serverIp, 1234);
         mqBroker.Bind(endPoint);
         mqBroker.Listen(5);
@@ -56,6 +56,7 @@ class Program
             if (Petition == "Subscribe")
             {
                 string Result = queueList.Subscribe(topic, appid);
+                Console.WriteLine("A ver");
                 string respuesta = "Servidor envía: " + Result; ;
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }

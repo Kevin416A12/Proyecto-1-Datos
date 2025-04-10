@@ -173,16 +173,16 @@ class program
     static void Main(string[] args)
     {   
         
-        MQClient client = new MQClient("192.168.1.163",1234, 416);
-        Topic topic = new Topic("Comida");
-        Message menssage = new Message("Hola, mundo");
+        //MQClient client = new MQClient("192.168.5.66", 1234, 416);
+        //Topic topic = new Topic("Comida");
+        //Message menssage = new Message("Hola, mundo");
         
         
-        client.Subscribe(topic);
-        client.Subscribe(topic);
-        client.publish(topic, menssage);
-        client.Unsubscribe(topic);
-        client.receive(topic);
+       // client.Subscribe(topic);
+        //client.Subscribe(topic);
+        //client.publish(topic, menssage);
+        //client.Unsubscribe(topic);
+        //client.receive(topic);
         
         
         

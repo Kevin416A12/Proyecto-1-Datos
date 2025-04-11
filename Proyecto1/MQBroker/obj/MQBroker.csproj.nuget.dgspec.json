@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj": {}
+    "C:\\Users\\Kevin\\RiderProjects\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj": {
+    "C:\\Users\\Kevin\\RiderProjects\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj",
+        "projectUniqueName": "C:\\Users\\Kevin\\RiderProjects\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj",
         "projectName": "MQBroker",
-        "projectPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj",
-        "packagesPath": "C:\\Users\\cotym\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\obj\\",
+        "projectPath": "C:\\Users\\Kevin\\RiderProjects\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj",
+        "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kevin\\RiderProjects\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\cotym\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Kevin\\.dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

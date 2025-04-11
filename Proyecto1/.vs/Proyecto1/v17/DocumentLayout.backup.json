@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E6B62B86-2D7E-44E3-AA1E-26CE0BF021EB}|MQClient\\MQClient.csproj|c:\\users\\cotym\\pp\\proyecto-1-datos\\proyecto1\\mqclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6B62B86-2D7E-44E3-AA1E-26CE0BF021EB}|MQClient\\MQClient.csproj|solutionrelative:mqclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8E6A8B71-AE5F-4E76-A61C-D2D634DF2A2D}|MQBroker\\MQBroker.csproj|c:\\users\\cotym\\pp\\proyecto-1-datos\\proyecto1\\mqbroker\\mqbroker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E6A8B71-AE5F-4E76-A61C-D2D634DF2A2D}|MQBroker\\MQBroker.csproj|solutionrelative:mqbroker\\mqbroker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,6 +31,10 @@
       "RelativeMoniker": "D:0:0:{8E6A8B71-AE5F-4E76-A61C-D2D634DF2A2D}|MQBroker\\MQBroker.csproj|solutionrelative:mqbroker\\queuelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E6B62B86-2D7E-44E3-AA1E-26CE0BF021EB}|MQClient\\MQClient.csproj|c:\\users\\cotym\\pp\\proyecto-1-datos\\proyecto1\\mqclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6B62B86-2D7E-44E3-AA1E-26CE0BF021EB}|MQClient\\MQClient.csproj|solutionrelative:mqclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1226AC0E-43EC-4058-AB64-2F30D51C464E}|GUI\\GUI.csproj|c:\\users\\cotym\\pp\\proyecto-1-datos\\proyecto1\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1226AC0E-43EC-4058-AB64-2F30D51C464E}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -64,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -72,7 +72,8 @@
               "RelativeToolTip": "GUI\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T05:10:59.657Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Bookmark",
@@ -80,19 +81,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "GUI.csproj",
+              "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
+              "RelativeDocumentMoniker": "GUI\\GUI.csproj",
+              "ToolTip": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
+              "RelativeToolTip": "GUI\\GUI.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-11T02:14:05.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MQBroker.cs",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.cs",
               "RelativeDocumentMoniker": "MQBroker\\MQBroker.cs",
               "ToolTip": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.cs",
               "RelativeToolTip": "MQBroker\\MQBroker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:07:51.221Z"
+              "WhenOpened": "2025-04-10T19:07:51.221Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "MQBroker.csproj",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\MQBroker.csproj",
               "RelativeDocumentMoniker": "MQBroker\\MQBroker.csproj",
@@ -100,11 +115,12 @@
               "RelativeToolTip": "MQBroker\\MQBroker.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-10T19:04:10.221Z"
+              "WhenOpened": "2025-04-10T19:04:10.221Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "QueueList.cs",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\QueueList.cs",
               "RelativeDocumentMoniker": "MQBroker\\QueueList.cs",
@@ -116,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Queue.cs",
               "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQBroker\\Queue.cs",
               "RelativeDocumentMoniker": "MQBroker\\Queue.cs",
@@ -124,32 +140,8 @@
               "RelativeToolTip": "MQBroker\\Queue.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T14:07:54.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\Program.cs",
-              "RelativeDocumentMoniker": "MQClient\\Program.cs",
-              "ToolTip": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\Program.cs",
-              "RelativeToolTip": "MQClient\\Program.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowCsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T08:59:07.501Z",
+              "WhenOpened": "2025-04-04T14:07:54.097Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GUI.csproj",
-              "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
-              "RelativeDocumentMoniker": "GUI\\GUI.csproj",
-              "ToolTip": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\GUI\\GUI.csproj",
-              "RelativeToolTip": "GUI\\GUI.csproj",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-11T02:14:05.114Z"
             },
             {
               "$type": "Document",
@@ -162,6 +154,18 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T13:56:54.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\Program.cs",
+              "RelativeDocumentMoniker": "MQClient\\Program.cs",
+              "ToolTip": "C:\\Users\\cotym\\PP\\Proyecto-1-Datos\\Proyecto1\\MQClient\\Program.cs",
+              "RelativeToolTip": "MQClient\\Program.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAD4v6gAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T08:59:07.501Z"
             }
           ]
         }

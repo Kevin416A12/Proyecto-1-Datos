@@ -5,8 +5,6 @@ using System.Text;
 
 namespace MQBroker;
 
-
-
 class Program
 {
     static void Main(string[] args)
@@ -71,13 +69,6 @@ class Program
                 string Result = "Published in " + topic;
                 //string respuesta = "Servidor envía: " + Result;
                 string respuesta =  Result;
-
-                // Queue current = queueList.head;
-                //current.PrintQueue();
-                //if (current.nextQueue != null) {
-                //    current.nextQueue.PrintQueue();
-                //}
-
 
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }

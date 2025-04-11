@@ -55,7 +55,6 @@ namespace GUI
             Advertencia_ID = new Label();
             Advertencia_Tema = new Label();
             Publish_Advertencia = new Label();
-            label9 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -318,24 +317,11 @@ namespace GUI
             Publish_Advertencia.Text = "Debe de ingresar una entrada válida";
             Publish_Advertencia.Visible = false;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold | FontStyle.Italic);
-            label9.ForeColor = Color.Red;
-            label9.Location = new Point(1127, 336);
-            label9.Name = "label9";
-            label9.Size = new Size(230, 19);
-            label9.TabIndex = 28;
-            label9.Text = "Debe de ingresar un número válido";
-            label9.Visible = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1410, 450);
-            Controls.Add(label9);
             Controls.Add(Publish_Advertencia);
             Controls.Add(Advertencia_Tema);
             Controls.Add(Advertencia_ID);
@@ -402,6 +388,5 @@ namespace GUI
         private Label Advertencia_ID;
         private Label Advertencia_Tema;
         private Label Publish_Advertencia;
-        private Label label9;
     }
 }

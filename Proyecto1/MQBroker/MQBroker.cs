@@ -12,12 +12,10 @@ class Program
     static void Main(string[] args)
     {
         QueueList queueList = new QueueList();
-        //Console.WriteLine(queueList.Subscribe("Comida", "416"));
-        //queueList.Publish("Comida", "Salsa");
-        //Console.WriteLine(queueList.Receive("Comida", "416"));
         
         // Crear socket
         Socket mqBroker = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
         // Crear punto de conexión
         IPAddress serverIp = IPAddress.Parse("192.168.5.66");
         IPEndPoint endPoint = new IPEndPoint(serverIp, 1234);
@@ -53,7 +51,7 @@ class Program
             
             Console.WriteLine(Petition + " : " + appid + " : " + topic);
             
-            if (Petition == "Subscribe")
+            if (Petition == "Subscribe") 
             {
                 string Result = queueList.Subscribe(topic, appid);
                 Console.WriteLine("A ver");
@@ -71,13 +69,29 @@ class Program
             {
                 queueList.Publish(topic, appid);
                 string Result = "Published in " + topic;
-                string respuesta = "Servidor envía: " + Result;
+                //string respuesta = "Servidor envía: " + Result;
+                string respuesta =  Result;
+
+                // Queue current = queueList.head;
+                //current.PrintQueue();
+                //if (current.nextQueue != null) {
+                //    current.nextQueue.PrintQueue();
+                //}
+
+
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else if (Petition == "Receive")
             {
                 string Result = queueList.Receive(topic, appid);
-                string respuesta = "Servidor envía: " + Result;
+                //string respuesta = "Servidor envía: " + Result;
+                string respuesta = Result;
+
+                if (respuesta == null || respuesta == "") {
+                    respuesta = "La cola está vacía";
+                    
+                }
+
                 cliente.Send(Encoding.UTF8.GetBytes(respuesta));
             }
             else

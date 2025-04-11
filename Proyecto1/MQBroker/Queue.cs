@@ -15,7 +15,7 @@ class Node
     }
 }
 
-class Queue
+public class Queue
 {
     private Node first;
     private Node last;
@@ -53,42 +53,28 @@ class Queue
             Console.WriteLine("La cola está vacía.");
             return null;
         }
-
-        string value = last.Value;
-
-        // Si solo hay un elemento
-        if (first == last)
-        {
-            first = null;
-            last = null;
-        }
         else
         {
-            // Recorremos hasta llegar al nodo anterior al 'last'
-            Node actual = first;
-            while (actual.Next != last)
+            Node current = first;
+            first = current.Next;
+            if (first == null)
             {
-                actual = actual.Next;
+                last = null;
             }
-
-            // Actualizamos 'last' al nodo anterior
-            last = actual;
-            last.Next = null;
+            return current.Value;
         }
-
-        return value;
     }
-
-
 
     public void PrintQueue()
     {
         Node temp = first;
         Console.Write($"Cola ({topic}): ");
+
         while (temp != null)
         {
             Console.Write(temp.Value + " -> ");
             temp = temp.Next;
+
         }
         Console.WriteLine("null");
     }

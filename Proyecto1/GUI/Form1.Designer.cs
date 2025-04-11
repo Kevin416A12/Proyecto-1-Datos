@@ -54,6 +54,8 @@ namespace GUI
             label7 = new Label();
             Advertencia_ID = new Label();
             Advertencia_Tema = new Label();
+            Publish_Advertencia = new Label();
+            label9 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -158,7 +160,7 @@ namespace GUI
             // botonPublicar
             // 
             botonPublicar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            botonPublicar.Location = new Point(856, 357);
+            botonPublicar.Location = new Point(857, 370);
             botonPublicar.Name = "botonPublicar";
             botonPublicar.Size = new Size(106, 66);
             botonPublicar.TabIndex = 11;
@@ -169,7 +171,7 @@ namespace GUI
             // botonRecibir
             // 
             botonRecibir.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            botonRecibir.Location = new Point(1181, 357);
+            botonRecibir.Location = new Point(1191, 370);
             botonRecibir.Name = "botonRecibir";
             botonRecibir.Size = new Size(106, 66);
             botonRecibir.TabIndex = 13;
@@ -304,11 +306,37 @@ namespace GUI
             Advertencia_Tema.Text = "Debe ingresa un tema válido";
             Advertencia_Tema.Visible = false;
             // 
+            // Publish_Advertencia
+            // 
+            Publish_Advertencia.AutoSize = true;
+            Publish_Advertencia.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold | FontStyle.Italic);
+            Publish_Advertencia.ForeColor = Color.Red;
+            Publish_Advertencia.Location = new Point(804, 342);
+            Publish_Advertencia.Name = "Publish_Advertencia";
+            Publish_Advertencia.Size = new Size(239, 19);
+            Publish_Advertencia.TabIndex = 27;
+            Publish_Advertencia.Text = "Debe de ingresar una entrada válida";
+            Publish_Advertencia.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold | FontStyle.Italic);
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(1127, 336);
+            label9.Name = "label9";
+            label9.Size = new Size(230, 19);
+            label9.TabIndex = 28;
+            label9.Text = "Debe de ingresar un número válido";
+            label9.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1410, 450);
+            Controls.Add(label9);
+            Controls.Add(Publish_Advertencia);
             Controls.Add(Advertencia_Tema);
             Controls.Add(Advertencia_ID);
             Controls.Add(label7);
@@ -373,5 +401,7 @@ namespace GUI
         private Label label7;
         private Label Advertencia_ID;
         private Label Advertencia_Tema;
+        private Label Publish_Advertencia;
+        private Label label9;
     }
 }

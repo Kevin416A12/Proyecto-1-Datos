@@ -4,7 +4,8 @@ using System.Windows.Forms.VisualStyles;
 
 namespace GUI
 {
-    public partial class Form1 : Form {
+    public partial class Form1 : Form
+    {
 
 
         public Form1()
@@ -23,7 +24,8 @@ namespace GUI
         {
             string[] partesIP = IP.Split(".");
 
-            if (partesIP.Length != 4) {
+            if (partesIP.Length != 4)
+            {
                 return false;
             }
 
@@ -54,26 +56,36 @@ namespace GUI
             int numeroID = -1;
 
 
-            if (validacionIP(ip_entrada)) {
+            if (validacionIP(ip_entrada))
+            {
                 Advertencia_IP.Hide();
-            } else {
+            }
+            else
+            {
                 Advertencia_IP.Show();
             }
 
-            if (int.TryParse(port_entrada, out numeroPort)) {
+            if (int.TryParse(port_entrada, out numeroPort))
+            {
                 Advertencia_Port.Hide();
 
-            } else {
+            }
+            else
+            {
                 Advertencia_Port.Show();
             }
 
-            if (int.TryParse(AppID_entrada, out numeroID)) {
+            if (int.TryParse(AppID_entrada, out numeroID))
+            {
                 Advertencia_ID.Hide();
-            } else {
+            }
+            else
+            {
                 Advertencia_ID.Show();
             }
 
-            if (numeroPort != -1 && validacionIP(ip_entrada) == true && numeroID != -1) {
+            if (numeroPort != -1 && validacionIP(ip_entrada) == true && numeroID != -1)
+            {
                 inicializacion_cliente(ip_entrada, numeroPort, numeroID);
 
                 IP_Label.Show();
@@ -85,7 +97,9 @@ namespace GUI
                 Advertencia_conexion.Hide();
                 Advertencia_Tema.Show();
                 return true;
-            } else {
+            }
+            else
+            {
                 Advertencia_conexion.Show();
                 return false;
             }
@@ -169,12 +183,13 @@ namespace GUI
                 if (mensaje_entrada == null || mensaje_entrada == "")
                 {
 
-                    publishText.Text = "Debe de ingresar una entrada válida";
+                    Publish_Advertencia.Show();
                 }
 
 
                 if (mensaje_entrada != null && mensaje_entrada != "" && topic_entrada != null && topic_entrada != "")
                 {
+                    Publish_Advertencia.Hide();
 
                     if (validacion_datos_cliente)
                     {
@@ -218,7 +233,7 @@ namespace GUI
 
                         receiveText.Text = display_message;
                         receiveTopicBox.Text = topic_entrada;
-                    }  
+                    }
 
                 }
 

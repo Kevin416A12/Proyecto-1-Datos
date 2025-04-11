@@ -4,7 +4,7 @@ namespace MQBroker;
 
 public class QueueList
 {
-    private Queue head; 
+    public Queue head; 
     private int size;
     
 
@@ -80,7 +80,7 @@ public class QueueList
         {
             head = head.nextQueue;
             size--;
-            return "";
+            return "El usuario se ha desuscritro del tema";
         }
         
         Queue current = head;
@@ -95,7 +95,7 @@ public class QueueList
             current = current.nextQueue;
         }
 
-        return "";
+        return "El usuario se ha desuscritro del tema";
     }
 
     public string Receive(string topic, string user)
@@ -127,6 +127,7 @@ public class QueueList
         {
             if (current.topic == topic)
             {
+                Console.WriteLine(":P");
                 return true;
             }
             current = current.nextQueue;
@@ -143,15 +144,16 @@ public class QueueList
 
         Queue current = head;
 
-       while (current != null)
-       {
-           if (current.topic == topic)
-           {
-               current.Enqueue(message);
-           }
-           current = current.nextQueue;
-       }
-       return true;
+        while (current != null)
+        {
+            if (current.topic == topic)
+            {
+                current.Enqueue(message);
+                break; 
+            }
+            current = current.nextQueue;
+        }
+        return true;
     }
-    
+
 }
